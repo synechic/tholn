@@ -9,20 +9,27 @@
 
 ## About
 
-**Tholn** is a governance and execution engine designed to withstand the entropy
-of modern AI hype. It is built for teams and individuals who view code generation
-as an **investment in reliability**, not a race to the bottom on cost.
+**Tholn** is a governance and execution engine focused specifically on the
+**software development and architectural phases** of engineering. It bridges the
+gap between high-level system design and the concrete implementation details
+required to build it, ensuring that architectural intent is not lost in
+translation during the coding process.
 
-While many off-the-shelf AI coding tools target the prosumer market—optimizing for
-speed and low token usage—**Tholn is designed for resource-allocated engineering.**
-It assumes that professional teams are willing to spend more (computationally and
-financially) on multi-agent verification loops, rigorous state tracking, and
-isolated execution to ensure the resulting software is maintainable and secure.
+In an era defined by **generative hype**, it is easy to succumb to **"Extreme Go
+Horse" (XGH)** development—prioritizing raw speed over sanity, and generating
+code faster than it can be understood. **Tholn rejects this chaotic
+acceleration.** It is built to harness the creative power of Large Language
+Models (LLMs) while strictly constraining their execution within professional
+engineering boundaries.
 
-**Tholn** bridges the gap between high-level system design and concrete
-implementation. By decoupling **workflow state** from **agent inference** and
-enforcing work within **ephemeral, hermetic Docker containers**, Tholn turns
-probabilistic code generation into a **deterministic manufacturing layer**.
+Unlike many off-the-shelf AI coding tools that target the prosumer market by
+optimizing for speed and low token usage, **Tholn is designed for
+resource-allocated engineering.** It assumes that professional teams are willing
+to invest more—both computationally and financially—to ensure the resulting
+software is maintainable, secure, and aligned with organizational standards. By
+decoupling workflow state from agent inference and enforcing work within
+**ephemeral, hermetic Docker containers**, Tholn turns probabilistic code
+generation into a **deterministic manufacturing layer**.
 
 ## Definition
 
@@ -39,10 +46,19 @@ How to read the name
 - **-n** — a terminal anchor: suggesting a "pinned" state. The workflow is not
   inferred; it is held.
 
+The name attempts to express
+- **Institutional Continuity:** Preserving the project's "mental model" against
+  the transience of LLM context windows.
+- **Governed Autonomy:** Agents execute freely within the container, but the
+  pipeline is immutable.
+- **Legibility:** Prioritizing long-term maintenance over immediate generation speed.
+
+
+
 ## Strategic Intent
 
-- **Resource-First Engineering:** Tholn is not a "budget" coding assistant. It
-  is an orchestration engine that spends resources to buy certainty. It runs
+- **Resource-First Engineering:** Tholn is not a "budget" coding assistant; it is
+  an orchestration engine that spends resources to buy certainty. It runs
   multiple adversarial agents (Professors, Security Analysts) in parallel to
   challenge code before it is committed. We trade raw inference cost for
   reduced technical debt.
@@ -56,9 +72,12 @@ How to read the name
   Tholn enforces **linear progression** (Init → Map → Phase X). Agents cannot
   "jump ahead" or hallucinate progress. The system tracks the state, ensuring
   every commit is the result of a validated sequence.
-- **Isolated Execution:** To prevent dependency hallucination, Tholn uses
-  **Docker** containers as transient "jails." If a change set cannot pass its
-  tests within the isolation layer, it is never merged.
+- **Isolated Execution Strategy:** To prevent dependency hallucination and
+  environment leakage, **Tholn leverages containerization** for agent work.
+  Currently utilizing **Docker** as the primary driver, this approach ensures
+  that agents operate in "jails" that mirror production constraints. If a
+  change set cannot pass its tests within the isolation layer, it is never
+  merged.
 
 ## Technology Stack
 
@@ -101,4 +120,3 @@ the session state and containerized workers.
 
 ```shell
 pip install tholn-cli
-```
