@@ -152,6 +152,20 @@ without sacrificing performance.
 
 ## Future Plans
 
+- **Web User Interface (WebUI):** While the CLI remains core, a centralized
+  WebUI will be developed to visualize the "Graph of Truth" (Pyoxigraph state)
+  across large teams. This will provide a "Mission Control" view for Managers to
+  audit agent performance and architectural drift in real-time.
+- **Native IDE Integrations:** To bring the "Hands-on" experience directly to
+  where code is read, we will develop extensions for the most popular IDEs:
+  - **VS Code**
+  - **JetBrains (IntelliJ/PyCharm)**
+  - **Neovim**
+  - **... the others**
+- **Language Server Protocol (LSP):** Tholn will expose its state engine via
+  LSP. This will allow the editor to "know" the project's architectural map,
+  providing linting errors not just for syntax, but for architectural violations
+  (e.g., "Importing this module violates the Map phase definition").
 - **Sane Feature Branch Merging:** Traditional merging relies on textual diffs,
   which often fail to capture semantic conflicts in AI-generated code. Future
   versions of Tholn will support **Spec-Enhanced Merging**, where the "Map"
@@ -162,3 +176,12 @@ without sacrificing performance.
   container. An agent, equipped with the reconciled spec, will apply patches
   semantically, ensuring the merged code adheres to the project's centralized
   artifacts and tests.
+
+## Command Line Interface
+
+The current command line is written in Python to ensure broad compatibility with
+engineering toolchains. It serves as the primary entry point for orchestrating
+the session state and containerized workers.
+
+```shell
+pip install tholn-cli
