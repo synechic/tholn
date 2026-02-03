@@ -121,6 +121,9 @@ without sacrificing performance.
   Tholn provides a rich, application-class terminal interface for managing
   sessions, visualizing phase progress, and reviewing agent outputs without
   leaving the command line.
+- **Model Support (v1):** Initial support is focused exclusively on **Claude and 
+  Anthropic model families**. This includes direct API integration as well as 
+  support for models hosted on **Amazon Bedrock**.
 - **Semantic State Engine:** Uses **[Pyoxigraph](https://github.com/oxigraph/oxigraph)**
   as a high-performance, in-memory graph database. The workflow state is
   persisted to disk but **loaded/unloaded into memory** during sessions for
@@ -152,6 +155,10 @@ without sacrificing performance.
 
 ## Future Plans
 
+- **Expanded Model Ecosystem:** While we currently prioritize the Anthropic 
+  stack for its reasoning density, we plan to introduce support for additional 
+  model providers (OpenAI, Google) and local-first inference (Llama, Mistral) 
+  to provide teams with more choice over their inference overhead.
 - **Web User Interface (WebUI):** While the CLI remains core, a centralized
   WebUI will be developed to visualize the "Graph of Truth" (Pyoxigraph state)
   across large teams. This will provide a "Mission Control" view for Managers to
@@ -176,12 +183,3 @@ without sacrificing performance.
   container. An agent, equipped with the reconciled spec, will apply patches
   semantically, ensuring the merged code adheres to the project's centralized
   artifacts and tests.
-
-## Command Line Interface
-
-The current command line is written in Python to ensure broad compatibility with
-engineering toolchains. It serves as the primary entry point for orchestrating
-the session state and containerized workers.
-
-```shell
-pip install tholn-cli
