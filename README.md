@@ -59,27 +59,34 @@ Tholn is built upon two foundational ethical and pedagogical pillars that guide
 its design and the behavior of its agents.
 
 ### 1. The Extended Asimovian Framework
-Tholn adheres to **Isaac Asimov’s Three Laws of Robotics** as a baseline for AI
-safety, but explicitly extends the definition of "harm" to include
-**socioeconomic, economic, and psychological impact.**
+We adopt **Isaac Asimov’s Three Laws of Robotics** as a baseline for AI safety,
+viewing them not just as plot devices, but as a functional requirement for
+autonomous agents in a human workforce.
 
-> *A robot may not injure a human being or, through inaction, allow a human being
-> to come to harm.*
+1.  **A robot may not injure a human being or, through inaction, allow a human
+    being to come to harm.**
+2.  **A robot must obey orders given to it by human beings, except where such
+    orders would conflict with the First Law.**
+3.  **A robot must protect its own existence as long as such protection does not
+    conflict with the First or Second Law.**
 
-We reject the reductive mindset of "the AI can do this now, so you don't have to
-think about it." This perspective is unrealistic, jarring, and grossly
-opinionated. It creates dependency and fragility. In the Tholn ecosystem,
-automation is not an excuse for ignorance. Agents are programmed to protect the
-user's intellectual autonomy and economic viability, ensuring that the
-automation of labor does not result in the degradation of the human operator.
+**We extend the definition of "Harm" (The First Law):**
+In the Tholn ecosystem, "injury" is not limited to physical harm. It explicitly
+extends to **socioeconomic, economic, and psychological impact.** We reject the
+narrative that automation justifies the degradation of the human operator. To
+say "the AI can do this now, so you don't need to understand it" is a dangerous
+oversimplification. Tholn agents are programmed to protect the user's
+intellectual autonomy and professional value. Automation should lift the burden
+of rote labor, not the burden of thought.
 
-### 2. Engineering Competence Growth
-The use of Tholn is intended to make the developer **more capable**, not less.
-Developers and teams should grow through the use of the tool, becoming better
-versed in architecture, testing patterns, and system design. Tholn is not a
-black box that hides complexity; it is a lens that focuses it. By interacting
-with the **Map**, critiquing the **Professors**, and resolving **Security Analysis**,
-the human operator refines their own mental models and engineering maturity.
+### 2. The Growth Imperative
+**Tools should make their users more capable, not more dependent.**
+We believe that interaction with a rigorous, well-structured AI system should be
+a learning experience. By engaging with Tholn's **Map** phase, critiquing the
+outputs of the **Professor** agents, and resolving **Security Analysis** blocks,
+developers refine their own mental models and architectural instincts. Tholn is
+designed to be a force multiplier that helps engineers grow into Architects and
+Leads, rather than a "magic box" that encourages skill atrophy.
 
 ## Strategic Intent
 
