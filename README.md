@@ -9,18 +9,20 @@
 
 ## About
 
-**Tholn** is a governance and execution engine focused specifically on the
-**software development and architectural phases** of engineering. It bridges the
-gap between high-level system design and the concrete implementation details
-required to build it, ensuring that architectural intent is not lost in
-translation during the coding process.
+**Tholn** is a governance and execution engine designed to withstand the entropy
+of modern AI hype. In an era where generative tools often encourage **"Extreme Go
+Horse" (XGH)** development—prioritizing raw speed over sanity, and generating code
+faster than it can be understood—Tholn serves as a necessary architectural brake
+and alignment system. It rejects chaotic acceleration in favor of **measured,
+verifiable execution**.
 
-In an era defined by **generative hype**, it is easy to succumb to "Go Horse"
-development practices—where speed is prioritized over sanity, and code is
-generated faster than it can be understood. **Tholn rejects this chaotic
-acceleration.** It is built to harness the creative power of Large Language
-Models (LLMs) while strictly constraining their execution within professional
-engineering boundaries.
+**Tholn** focuses specifically on the **software development and architectural
+phases** of engineering. It bridges the gap between high-level system design and
+the concrete implementation details required to build it, ensuring that
+architectural intent is not lost in translation during the coding process. It is
+built to harness the creative power of Large Language Models (LLMs) while
+strictly constraining their execution within professional engineering
+boundaries.
 
 By decoupling workflow state from agent inference and enforcing work within
 **ephemeral, hermetic Docker containers**, Tholn turns probabilistic code
@@ -106,4 +108,3 @@ the session state and containerized workers.
 
 ```shell
 pip install tholn-cli
-```
