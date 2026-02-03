@@ -53,6 +53,34 @@ The name attempts to express
   pipeline is immutable.
 - **Legibility:** Prioritizing long-term maintenance over immediate generation speed.
 
+## Core Tenets
+
+Tholn is built upon two foundational ethical and pedagogical pillars that guide
+its design and the behavior of its agents.
+
+### 1. The Extended Asimovian Framework
+Tholn adheres to **Isaac Asimov’s Three Laws of Robotics** as a baseline for AI
+safety, but explicitly extends the definition of "harm" to include
+**socioeconomic, economic, and psychological impact.**
+
+> *A robot may not injure a human being or, through inaction, allow a human being
+> to come to harm.*
+
+We reject the reductive mindset of "the AI can do this now, so you don't have to
+think about it." This perspective is unrealistic, jarring, and grossly
+opinionated. It creates dependency and fragility. In the Tholn ecosystem,
+automation is not an excuse for ignorance. Agents are programmed to protect the
+user's intellectual autonomy and economic viability, ensuring that the
+automation of labor does not result in the degradation of the human operator.
+
+### 2. Engineering Competence Growth
+The use of Tholn is intended to make the developer **more capable**, not less.
+Developers and teams should grow through the use of the tool, becoming better
+versed in architecture, testing patterns, and system design. Tholn is not a
+black box that hides complexity; it is a lens that focuses it. By interacting
+with the **Map**, critiquing the **Professors**, and resolving **Security Analysis**,
+the human operator refines their own mental models and engineering maturity.
+
 ## Strategic Intent
 
 - **Resource-First Engineering:** Tholn is not a "budget" coding assistant; it is
@@ -76,8 +104,6 @@ The name attempts to express
   that agents operate in "jails" that mirror production constraints. If a
   change set cannot pass its tests within the isolation layer, it is never
   merged.
-
-
 
 ## Technology Stack
 
