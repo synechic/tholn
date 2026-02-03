@@ -117,12 +117,15 @@ without sacrificing performance.
   refactoring**. You can "rewind" the state, modify the map, and replay phases
   to align documentation and tests.
 
-## Command Line Interface
+## Future Plans
 
-The current command line is written in Python to ensure broad compatibility with
-engineering toolchains. It serves as the primary entry point for orchestrating
-the session state and containerized workers.
-
-```shell
-uv tool install tholn-cli
-```
+- **Sane Feature Branch Merging:** Traditional merging relies on textual diffs,
+  which often fail to capture semantic conflicts in AI-generated code. Future
+  versions of Tholn will support **Spec-Enhanced Merging**, where the "Map"
+  (architectural spec) of the feature branch is reconciled with the main
+  branch's spec *before* code is touched.
+- **Agent-Assisted Patching:** Instead of forcing the user to resolve thousands
+  of lines of conflict markers manually, Tholn will spin up an isolated merge
+  container. An agent, equipped with the reconciled spec, will apply patches
+  semantically, ensuring the merged code adheres to the project's centralized
+  artifacts and tests.
