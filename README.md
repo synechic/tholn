@@ -18,17 +18,16 @@ verifiable execution**.
 
 **Tholn** focuses specifically on the **software development and architectural
 phases** of engineering. It bridges the gap between high-level system design and
-the concrete implementation details required to build it, ensuring that
-architectural intent is not lost in translation during the coding process. It is
-built to harness the creative power of Large Language Models (LLMs) while
-strictly constraining their execution within professional engineering
-boundaries.
+the concrete implementation details required to build it. By enforcing a strict
+**Init → Map → Phase X** topology, Tholn ensures that architectural intent is
+not lost in translation during the coding process.
 
-By decoupling workflow state from agent inference and enforcing work within
-**ephemeral, hermetic Docker containers**, Tholn turns probabilistic code
-generation into a **deterministic manufacturing layer**. It ensures that every
-architectural decision is mapped, every line of code is tested, and the
-resulting software is as legible as it is functional.
+To achieve this, Tholn decouples **workflow state** from **agent inference**. It
+manages the process timeline externally, preventing agents from skipping steps or
+hallucinating progress. Execution is currently offloaded to **ephemeral
+containers (initially Docker)**, turning probabilistic code generation into a
+**deterministic manufacturing layer** where every commit is the result of a
+linear, validated sequence.
 
 ## Definition
 
@@ -50,23 +49,32 @@ The name attempts to express
   the transience of LLM context windows.
 - **Governed Autonomy:** Agents execute freely within the container, but the
   pipeline is immutable.
-- **Anti-WORM:** A rejection of "Write Once, Read Never" code in favor of
-  legibility and auditability.
+- **Legibility:** Prioritizing long-term maintenance over immediate generation speed.
 
 
 
 ### Strategic Intent
 
-- **Externalized State Management:** Staff engineers know that LLMs cannot
-  reliably maintain the state of a complex DAG (Directed Acyclic Graph). Tholn
-  removes this burden entirely. **The workflow state is stored and managed by
-  the system engine.** Agents are stateless workers invoked to transition the
-  system from Step A to Step B, eliminating "meta-prompting" drift.
-- **Hermetic Execution Environments:** To prevent dependency hallucination and
-  environment leakage, **Tholn mandates local Docker isolation**. Agents operate
-  within transient "jails" that mirror production constraints. If the refined
-  change set cannot pass its own tests within the jail, it is rejected before
-  reaching the host.
+- **The "Anti-WORN" Mandate:** In traditional software development, engineers
+  spend **60-80% of their time reading code**, not writing it. The introduction
+  of unconstrained AI generation threatens to worsen this ratio by flooding
+  repositories with opaque, idiosyncratic, **Write Once, Read Never (WORN)**
+  logic. Tholn inverts this risk. By outsourcing the *labor* of writing to AI,
+  we should be able to enforce *stricter* standardization, not less. Tholn
+  provides the tooling to do so, using **Professors** (documentation agents) and
+  **Managers** (review agents) to ensure code is legible before it is committed.
+- **Linear Process Enforcement:** Staff engineers know that LLMs struggle with
+  long-horizon planning. Tholn solves this by enforcing **linear progression**.
+  The system tracks exactly which phase the project is in (Init, Map, or specific
+  Implementation Phases). Agents cannot "jump ahead" to implementation without a
+  validated Map, nor can they commit code without passing the current phase's
+  gates. This ensures that progress is actual, not just simulated.
+- **Isolated Execution Strategy:** To prevent dependency hallucination and
+  environment leakage, **Tholn leverages containerization** for agent work.
+  Currently utilizing **Docker** as the primary driver, this approach ensures
+  that agents operate in "jails" that mirror production constraints. If the
+  change set cannot pass its own tests within the isolation layer, it is never
+  merged.
 - **Codified Continuity:** Tholn introduces **Centralized Artifacts**—a
   registry of templates, ADRs (Architectural Decision Records), and linting
   rules. Agents are forced to reference these artifacts, ensuring that
@@ -78,13 +86,9 @@ The name attempts to express
 - **Dual-Interface Session Drive:** Designed for the workflow of senior
   integrators. Use the **chat interface** for high-level architectural mapping,
   then drop to **CLI commands** for granular inspection and step re-execution.
-- **Phase-Driven Topology (Init → Map → Phase X):** Development is treated as a
-  finite state machine. Tholn enforces a strict progression where architectural
-  mapping must be validated before implementation phases begin.
-- **The "Anti-WORM" Mandate:** To combat technical debt, Tholn instantiates
-  specialized adversarial roles—**Professors** (Documentation/Clarity),
-  **Security Analysts** (Vulnerability checks), and **Managers** (Scope/drift
-  checks). These agents do not write code; they block it.
+- **Phase-Driven Topology:** Development is treated as a finite state machine.
+  Tholn enforces a strict progression where architectural mapping must be
+  validated before implementation phases begin.
 - **Refinement & Replay:** Because execution is containerized and state is
   external, Tholn allows for **retroactive refactoring**. You can "rewind" the
   state to the architectural map, modify the map, and replay the phases to
