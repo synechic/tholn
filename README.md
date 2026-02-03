@@ -3,22 +3,20 @@
 [![image](https://img.shields.io/pypi/v/tholn.svg)](https://pypi.python.org/pypi/tholn)
 [![image](https://img.shields.io/pypi/l/tholn.svg)](https://pypi.python.org/pypi/tholn)
 [![image](https://img.shields.io/pypi/pyversions/tholn.svg)](https://pypi.python.org/pypi/tholn)
-[![Discord](https://img.shields.io/discord/1429860101090709579?logo=discord&style=flat)](https://discord.com/widget?id=1429860101090709579)
+[![Discord](https://img.shields.io/discord/PLACEHOLDER?logo=discord&style=flat)](https://discord.com/widget?id=PLACEHOLDER)
 
-![image](https://github.com/synechic/tholn/blob/main/assets/banner.png?raw=true)
+![image](https://repository-images.githubusercontent.com/1148379555/4e948b65-d681-4593-87e5-259b2c3e013b)
 
 ## About
 
-**Tholn** is a session-driven development engine that bridges the gap between
-open-ended AI assistants (like Claude, OpenCode, or OpenHands) and rigid CI/CD
-pipelines. **Instead of relying on agents to infer project state or manage their
-own execution order, Tholn enforces a strictly defined, stateful workflow.** It
-offers a full chat interface and granular CLI controls to drive development, but
-offloads the actual work into **isolated execution environments**. To ensure
-this isolation is absolute, **Tholn initially requires a local Docker daemon**
-to contain all AI coding agents and LLM-driven processes. This ensures that
-every "Init → Map → Phase X" cycle produces refined, verifiable change sets—
-keeping the AI focused on coding while Tholn manages the process.
+**Tholn** is a session-driven SDLC engine designed to integrate AI-driven development
+without sacrificing engineering control. **It represents a simultaneous "Shift-Left"
+on risk and "Labor Abstraction" on implementation.** Instead of treating AI as a
+black-box generator, Tholn embeds it into a rigorous **Agile/Lean process**, using
+**isolated containers** to execute work while maintaining a **stateful,
+standardized workflow**. It enables developers to leverage centralized artifacts
+and continuity strategies, ensuring that AI agents don't just write code, but
+adhere to the project's specific cultural and technical standards.
 
 ## Definition
 
@@ -36,48 +34,50 @@ How to read the name
   inferred; it is held.
 
 The name attempts to express
-- **Session integrity:** A development session that doesn't drift into
-  hallucination.
-- **Constrained freedom:** Agents have full creative power within the container,
-  but the workflow itself is immutable.
+- **Process Continuity:** A development lifecycle that retains context and
+  standards over time.
+- **Constrained Freedom:** AI agents operate with high autonomy within containers,
+  but low autonomy over the process itself.
 - **Legibility:** Code that is written to be read, verified, and maintained.
+
+
 
 ## What Tholn focuses on
 
-- **Externalized State Management:** AI agents are notoriously bad at
-  remembering where they are in a complex process. Tholn removes this burden
-  entirely. **The workflow state is stored and managed by the system**, not the
-  agent. Agents are invoked only to execute specific steps within that state,
-  eliminating "meta-prompting" drift.
+- **Risk Shift-Left & Labor Abstraction:** Tholn operationalizes "Shift-Left" by
+  forcing architectural discovery, security analysis, and feasibility checks to
+  the very start of the cycle. Simultaneously, it achieves "Labor Abstraction"
+  by offloading high-volume implementation steps to AI agents running in
+  isolated jails.
+- **Centralized Artifact Continuity:** Unlike one-off prompts, Tholn leverages a
+  library of **centralized development artifacts and standards**. Agents refer
+  to established patterns (templates, linting rules, ADRs), ensuring that new
+  code feels familiar and maintains continuity with the existing codebase.
 - **Mandatory Docker Isolation:** To guarantee that "it works on my machine" is
-  a fact rather than a hope, **Tholn currently leverages Docker** as the
-  primary mechanism for agent interaction. All coding, testing, and refactoring
-  steps occur inside transient containers (jails), preventing environment
-  leakage and ensuring dependencies are explicit.
+  a fact rather than a hope, **Tholn leverages Docker** as the primary
+  mechanism for agent interaction. All coding, testing, and refactoring steps
+  occur inside transient containers, preventing environment leakage.
+- **Externalized State Management:** AI agents are notoriously bad at
+  managing the SDLC. Tholn removes this burden entirely. **The workflow state is
+  stored and managed by the system.** Agents are invoked only to execute
+  specific steps within that state, eliminating drift.
 - **Dual-Interface Session Drive:** Developers can interact via a **full chat
-  interface** for high-level guidance or drop down to **individual CLI
+  interface** for high-level Agile guidance or drop down to **individual CLI
   commands** for granular control. Both interfaces feed into the same state
   engine.
-- **Phase-Driven Topology:** Work follows a strict **Init → Map → Phase X**
-  progression. Tholn treats software development as a series of verified phases
-  rather than a continuous stream of text, allowing for **red/green/refactor**
-  cycles that are mechanically enforced.
 - **The "Anti-WORM" Mandate:** Tholn is designed to prevent **Write Once, Read
   Never (WORM)** software. It instantiates specific agent roles—**Professors**
   for documentation, **Security Analysts** for auditing, and **Managers** for
   architectural review—to ensure the resulting code is sane, accessible, and
   human-maintainable.
-- **Refinement & Merging:** Because execution happens in jails, Tholn produces
-  clean, **atomic change sets**. It allows you to **refactor all phases back to
-  a specific point**, aligning documentation and tests with code changes before
-  merging them into the main branch.
 
 ### Why this shape works
 
-- **Deterministic Workflows:** By stripping the "manager" role away from the AI
-  and giving it to a stateful engine, we get consistent results.
-- **Safe Exploration:** Agents can try (and fail) within a Docker container
-  without polluting the host environment or the project history.
+- **Lean Execution:** By strictly ordering agents and isolating execution, Tholn
+  eliminates the "waste" of hallucinated dependencies and circular debugging,
+  aligning with Lean software principles.
+- **Standardization as Value:** By referencing centralized artifacts, the system
+  avoids the fragmentation common in AI-generated codebases.
 - **Thorough Validation:** Since BDD/TDD cycles are enforced by the system (not
   requested by the user), testing is an unavoidable part of the process, not an
   afterthought.
@@ -86,8 +86,8 @@ The name attempts to express
 
 Tholn provides the fluid, conversational experience of an AI dev partner but
 wraps it in a rigid, stateful harness. It mandates Docker-based isolation,
-manages the workflow explicitly, and enforces professional engineering standards
-to produce software that holds its course.
+enforces Agile/Lean standards, and prioritizes continuity and familiarity to
+produce software that holds its course.
 
 ## Command Line Interface
 
